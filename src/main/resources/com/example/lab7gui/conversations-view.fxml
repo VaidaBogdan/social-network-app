@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab7gui.controller.ConversatiiController">
+   <children>
+      <SplitPane dividerPositions="0.7188755020080321" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="373.0" prefWidth="598.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="conversationTable" prefHeight="371.0" prefWidth="295.0">
+                                <columns>
+                                  <TableColumn fx:id="conversationIdColumn" prefWidth="98.33" text="ID" />
+                                  <TableColumn fx:id="conversationNumberParticipantsColumn" prefWidth="98.33" text="NrParticipanti" />
+                                    <TableColumn fx:id="conversationNumberMessagesColumn" prefWidth="95.0" text="NrMesaje" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="userTable" prefHeight="371.0" prefWidth="295.0">
+                                <columns>
+                                  <TableColumn fx:id="userIdColumn" prefWidth="98.33" text="ID" />
+                                  <TableColumn fx:id="userFirstNameColumn" prefWidth="98.33" text="FirstName" />
+                                    <TableColumn fx:id="userLastNameColumn" prefWidth="95.0" text="LastName" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="197.0" prefWidth="598.0">
+               <children>
+                  <Button layoutX="9.0" layoutY="14.0" mnemonicParsing="false" onAction="#newConvo" prefHeight="25.0" prefWidth="583.0" text="Creare conversatie noua" />
+                  <Button layoutX="9.0" layoutY="98.0" mnemonicParsing="false" onAction="#showConversation" prefHeight="25.0" prefWidth="583.0" text="Deschide conversatia" />
+                  <Button layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#deleteConvo" prefHeight="25.0" prefWidth="583.0" text="Sterge conversatie" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

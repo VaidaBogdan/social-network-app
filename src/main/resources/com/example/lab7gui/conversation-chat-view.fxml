@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab7gui.controller.ConversatieChatController">
+   <children>
+      <SplitPane dividerPositions="0.6555183946488294" orientation="VERTICAL" prefHeight="600.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="messageTable" prefHeight="389.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="messageIdColumn" prefWidth="38.0" text="ID" />
+                      <TableColumn fx:id="messageFromNameColumn" prefWidth="113.0" text="NumeUser" />
+                        <TableColumn fx:id="messageTextColumn" prefWidth="251.0" text="Mesaj" />
+                        <TableColumn fx:id="messageDateColumn" minWidth="2.0" prefWidth="141.0" text="Data" />
+                        <TableColumn fx:id="messageReplyIdColumn" prefWidth="54.0" text="IDREPLY" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5" prefHeight="205.0" prefWidth="600.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="userTable" layoutY="-4.0" prefHeight="211.0" prefWidth="296.0">
+                                <columns>
+                                  <TableColumn fx:id="userIdColumn" prefWidth="98.33" text="ID" />
+                                  <TableColumn fx:id="userFirstNameColumn" prefWidth="98.33" text="FirstName" />
+                                    <TableColumn fx:id="userLastNameColumn" prefWidth="96.0" text="LastName" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TextField fx:id="messageTextfield" layoutX="116.0" layoutY="14.0" prefHeight="25.0" prefWidth="166.0" />
+                              <Text layoutX="79.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesaj:" />
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addMessage" text="Send" />
+                              <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati userul care trimite mesajul" />
+                              <Text layoutX="14.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati mesajul la care raspunde (optional)" />
+                              <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onAction="#deleteMessage" text="Delete" />
+                              <Line endX="155.0" layoutX="141.0" layoutY="101.0" startX="-141.0" />
+                              <Text layoutX="79.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati mesajul pe care il stergeti" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

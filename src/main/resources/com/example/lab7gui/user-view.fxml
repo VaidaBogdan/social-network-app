@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="656.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab7gui.controller.UserController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutY="-7.0" prefHeight="665.0" prefWidth="667.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="665.0" prefWidth="330.0">
+               <children>
+                  <TableView fx:id="userTable" layoutX="-1.0" layoutY="6.0" prefHeight="252.0" prefWidth="329.0">
+                    <columns>
+                      <TableColumn fx:id="userIdColumn" prefWidth="70.0" text="id_user" />
+                      <TableColumn fx:id="userFirstNameColumn" prefWidth="131.0" text="First_Name" />
+                        <TableColumn fx:id="userLastNameColumn" prefWidth="131.0" text="Last_Name" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="14.0" layoutY="285.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete" />
+                  <Text layoutX="103.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati din tabel, apoi apasati delete" />
+                  <Button layoutX="18.0" layoutY="366.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="57.0" text="Adauga" />
+                  <Text layoutX="103.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name:" />
+                  <TextField fx:id="addFirstNameField" layoutX="173.0" layoutY="327.0" />
+                  <Text layoutX="104.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last name:" />
+                  <TextField fx:id="addLastNameField" layoutX="173.0" layoutY="366.0" />
+                  <Text layoutX="12.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati din tabel, introduceti datele si apasati pe buton" />
+                  <Button layoutX="15.0" layoutY="474.0" mnemonicParsing="false" onAction="#updateUser" text="Modifica" />
+                  <TextField fx:id="updateFirstNameField" layoutX="173.0" layoutY="474.0" />
+                  <TextField fx:id="updateLastNameField" layoutX="173.0" layoutY="507.0" />
+                  <Text layoutX="103.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name:" />
+                  <Text layoutX="104.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last name:" />
+                  <Line endX="179.0" layoutX="151.0" layoutY="437.0" startX="-151.0" />
+                  <Line endX="164.0" layoutX="166.0" layoutY="324.0" startX="-166.0" />
+                  <Line endX="179.0" layoutX="151.0" layoutY="541.0" startX="-151.0" />
+                  <Button layoutX="21.0" layoutY="559.0" mnemonicParsing="false" onAction="#initAdaugaPrietenie" prefHeight="25.0" prefWidth="286.0" text="Adauga cerere prietenie" />
+                  <Line endX="179.0" layoutX="151.0" layoutY="604.0" startX="-151.0" />
+                  <Button layoutX="21.0" layoutY="617.0" mnemonicParsing="false" onAction="#initConversatii" prefHeight="25.0" prefWidth="286.0" text="Deschide panou conversatii" />
+                  <Button fx:id="previousButton" layoutX="104.0" layoutY="258.0" mnemonicParsing="false" onAction="#goToPreviousPage" text="&lt;" />
+                  <Button fx:id="nextButton" layoutX="191.0" layoutY="258.0" mnemonicParsing="false" onAction="#goToNextPage" text="&gt;" />
+                  <Slider fx:id="mySlider" blockIncrement="1.0" layoutX="90.0" layoutY="283.0" max="10.0" min="1.0" />
+                  <Text layoutX="105.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola:" />
+                  <PasswordField fx:id="addPasswordField" layoutX="173.0" layoutY="400.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button layoutX="4.0" layoutY="424.0" mnemonicParsing="false" onAction="#acceptPrietenie" prefHeight="25.0" prefWidth="149.0" text="Accepta" />
+                  <Button layoutX="180.0" layoutY="424.0" mnemonicParsing="false" onAction="#respingePrietenie" prefHeight="25.0" prefWidth="149.0" text="Respinge" />
+                  <Button layoutX="27.0" layoutY="214.0" mnemonicParsing="false" onAction="#stergePrietenie" text="Delete" />
+                  <Text layoutX="96.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati din lista, apoi apasati delete" />
+                  <TableView fx:id="friendsTable" layoutX="1.0" layoutY="5.0" prefHeight="203.0" prefWidth="329.0">
+                    <columns>
+                      <TableColumn fx:id="friendFirstNameColumn" prefWidth="165.0" text="First_Name" />
+                      <TableColumn fx:id="friendLastNameColumn" prefWidth="165.0" text="Last_Name" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="pendingTable" layoutX="1.0" layoutY="460.0" prefHeight="203.0" prefWidth="329.0">
+                     <columns>
+                        <TableColumn fx:id="pendingFirstNameColumn" prefWidth="165.0" text="First_Name" />
+                        <TableColumn fx:id="pendingLastNameColumn" prefWidth="165.0" text="Last_Name" />
+                     </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
